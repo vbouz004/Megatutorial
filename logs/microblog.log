@@ -48,3 +48,49 @@ Traceback (most recent call last):
     {% endfor %}
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
 2020-02-17 01:07:19,212 INFO: Microblog startup [in D:\My Stuff\Projects\2020\Megatutorial\app\__init__.py:49]
+2020-02-17 23:58:11,947 INFO: Microblog startup [in D:\My Stuff\Projects\2020\Megatutorial\app\__init__.py:49]
+2020-02-18 00:05:12,461 INFO: Microblog startup [in D:\My Stuff\Projects\2020\Megatutorial\app\__init__.py:49]
+2020-02-18 01:14:17,446 INFO: Microblog startup [in D:\My Stuff\Projects\2020\Megatutorial\app\__init__.py:49]
+2020-02-18 01:17:24,860 ERROR: Exception on /reset_password_request [POST] [in d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "D:\Programs\Anaconda\lib\smtplib.py", line 387, in getreply
+    line = self.file.readline(_MAXLINE + 1)
+  File "D:\Programs\Anaconda\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\My Stuff\Projects\2020\Megatutorial\app\routes.py", line 164, in reset_password_request
+    send_password_reset_email(user)
+  File "D:\My Stuff\Projects\2020\Megatutorial\app\email.py", line 20, in send_password_reset_email
+    user=user, token=token))
+  File "D:\My Stuff\Projects\2020\Megatutorial\app\email.py", line 9, in send_email
+    mail.send(msg)
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "d:\my stuff\projects\2020\megatutorial\venv\lib\site-packages\flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "D:\Programs\Anaconda\lib\smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "D:\Programs\Anaconda\lib\smtplib.py", line 338, in connect
+    (code, msg) = self.getreply()
+  File "D:\Programs\Anaconda\lib\smtplib.py", line 391, in getreply
+    + str(e))
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed: [WinError 10054] An existing connection was forcibly closed by the remote host
+2020-02-18 01:38:04,321 INFO: Microblog startup [in D:\My Stuff\Projects\2020\Megatutorial\app\__init__.py:49]
