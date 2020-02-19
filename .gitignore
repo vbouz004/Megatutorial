@@ -6,3 +6,5 @@ flask
 .env
 
 requirement.txt
+
+logs/microblog.log
