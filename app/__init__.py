@@ -7,6 +7,8 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
+from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -17,6 +19,7 @@ login.login_view = 'login'
 mail = Mail(app)
 # Open Mail in second terminal (line below) set DEBUG MODE to 0
 #(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
+bootstrap = Bootstrap(app)
 
 from app import routes, models, errors
 
