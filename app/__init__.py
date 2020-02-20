@@ -8,6 +8,7 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
 
 
 app = Flask(__name__)
@@ -20,6 +21,7 @@ mail = Mail(app)
 # Open Mail in second terminal (line below) set DEBUG MODE to 0
 #(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
 bootstrap = Bootstrap(app)
+moment = Moment(app)
 
 from app import routes, models, errors
 
